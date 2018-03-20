@@ -15,7 +15,7 @@ module ActiveRecordObfuscateId
       end
 
       def to_obfuscated_id
-        ::ActiveRecordObfuscateId::Code.encode(@raw_value)
+        @raw_value.to_obfuscated_id
       end
     end
 

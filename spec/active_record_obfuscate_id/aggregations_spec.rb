@@ -6,7 +6,7 @@ RSpec.describe ActiveRecordObfuscateId::Aggregations do
 
   describe '.compose_of_obfuscated_id' do
     before do
-      allow(ActiveRecordObfuscateId::Code).to receive(:encode).and_return(100)
+      allow_any_instance_of(ActiveRecordObfuscateId::Coder).to receive(:encode).and_return(100)
     end
 
     it 'assign value from aggregation' do
