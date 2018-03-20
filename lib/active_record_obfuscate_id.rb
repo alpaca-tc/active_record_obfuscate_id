@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'active_record_obfuscate_id/version'
-
 module ActiveRecordObfuscateId
-  # Your code goes here...
+  require 'active_record_obfuscate_id/version'
+  require 'active_record_obfuscate_id/id'
+  require 'active_record_obfuscate_id/refinements'
 end
