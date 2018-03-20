@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 module ActiveRecordObfuscateId
-  class Id
-    def initialize(raw_id)
-      @raw_id = raw_id
+  module Id
+    def to_obfuscated_id
+      ActiveRecordObfuscateId::Code.encode(self)
     end
 
-    def to_obfuscated_id
-      @raw_id + 100
+    def to_deobfuscate_id
+      ActiveRecordObfuscateId::Code.decode(self)
     end
   end
 end
