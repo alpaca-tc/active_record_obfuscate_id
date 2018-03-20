@@ -1,6 +1,6 @@
-# ActivemodelObfuscateId
+# ActiveRecordObfuscateId
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/activemodel_obfuscate_id`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/active_record_obfuscate_id`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'activemodel_obfuscate_id'
+gem 'active_record_obfuscate_id'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install activemodel_obfuscate_id
+    $ gem install active_record_obfuscate_id
 
 ## Usage
 
@@ -32,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/activemodel_obfuscate_id.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/active_record_obfuscate_id.
 
 ## License
 

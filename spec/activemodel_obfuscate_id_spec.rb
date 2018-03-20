@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe ActivemodelObfuscateId do
+RSpec.describe ActiveRecordObfuscateId do
   it 'has a version number' do
-    expect(ActivemodelObfuscateId::VERSION).not_to be nil
+    expect(ActiveRecordObfuscateId::VERSION).not_to be nil
   end
 
   it 'does something useful' do
