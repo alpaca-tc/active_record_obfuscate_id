@@ -10,7 +10,12 @@ module ActiveRecordObfuscateId
   require 'active_record_obfuscate_id/coder'
 
   def self.coder
-    @coder ||= Coder.new(prime: 2_123_809_381, random: 146_808_189, maximum: 2_147_483_647)
+    @coder ||= Coder.new(
+      prime: 1_580_030_173,
+      inverse: 59_260_789,
+      random: 1_163_945_558,
+      maximum: 2_147_483_647
+    )
   end
 
   def self.coder=(value)

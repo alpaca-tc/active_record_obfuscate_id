@@ -2,13 +2,13 @@
 
 module ActiveRecordObfuscateId
   module Aggregations
-    class ObfuscateId
+    class ObfuscateId < BasicObject
       def self.from_obfuscated_id(value)
         new(value)
       end
 
+      delegate(:==, :===, to: :to_obfuscated_id)
       delegate_missing_to(:to_obfuscated_id)
-      delegate(:inspect, :to_s, :==, :===, to: :to_obfuscated_id)
 
       def initialize(raw_value)
         @raw_value = raw_value

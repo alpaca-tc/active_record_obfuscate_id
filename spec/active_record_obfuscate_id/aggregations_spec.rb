@@ -4,6 +4,9 @@ RSpec.describe ActiveRecordObfuscateId::Aggregations do
   User.extend(ActiveRecordObfuscateId::Aggregations)
   User.compose_of_obfuscated
 
+  Cart.extend(ActiveRecordObfuscateId::Aggregations)
+  Cart.compose_of_obfuscated(column_name: :user_id)
+
   describe '.compose_of_obfuscated_id' do
     before do
       allow_any_instance_of(ActiveRecordObfuscateId::Coder).to receive(:encode).and_return(100)
@@ -22,6 +25,13 @@ RSpec.describe ActiveRecordObfuscateId::Aggregations do
     it 'converts value from "1".to_obfuscated_id' do
       expect(User.where(id: 1).to_sql).to match(/"id" = 1/)
       expect(User.where(obfuscated_id: 1).to_sql).to match(/"id" = 100/)
+
+      expect(Cart.where(obfuscated_user_id: 1).to_sql).to match(/"user_id" = 100/)
+      expect(Cart.joins(:user).merge(User.where(obfuscated_id: 1)).to_sql).to match(/"users"."id" = 100/)
+    end
+
+    it 'defines #obfuscated_xxx' do
+      User.new(obfuscated_id: 1).obfuscated_id
     end
   end
 end
