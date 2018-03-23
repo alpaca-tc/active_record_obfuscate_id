@@ -2,18 +2,21 @@
 
 module ActiveRecordObfuscateId
   class Coder
-    def initialize(prime:, random:, maximum:)
+    attr_reader :prime, :inverse, :random, :maximum
+
+    def initialize(prime:, inverse:, random:, maximum:)
       @prime = prime
+      @inverse = inverse
       @random = random
       @maximum = maximum
     end
 
     def encode(value)
-      value
+      ((value * prime) & maximum) ^ random
     end
 
     def decode(value)
-      value
+      ((value ^ random) * inverse & maximum)
     end
   end
 end
