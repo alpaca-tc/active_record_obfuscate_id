@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module ActiveRecordObfuscateId
-  module Id
+  module ObfuscateId
     def to_obfuscated_id
       ActiveRecordObfuscateId.coder.encode(self)
     end
