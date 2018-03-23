@@ -6,7 +6,6 @@ module ActiveRecordObfuscateId
   require 'active_record_obfuscate_id/version'
   require 'active_record_obfuscate_id/obfuscate_id'
   require 'active_record_obfuscate_id/aggregations'
-  require 'active_record_obfuscate_id/core_ext'
   require 'active_record_obfuscate_id/coder'
 
   def self.coder
